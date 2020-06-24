@@ -1,0 +1,64 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30128.74
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "entrypayment", "entrypayment\", "{EEE2FFE9-84C7-4DBF-8B04-C6B24856B6DD}"
+	ProjectSection(WebsiteProperties) = preProject
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.0"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_65452"
+		Debug.AspNetCompiler.PhysicalPath = "entrypayment\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_65452\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/localhost_65452"
+		Release.AspNetCompiler.PhysicalPath = "entrypayment\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_65452\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "65452"
+		SlnRelativePath = "entrypayment\"
+	EndProjectSection
+EndProject
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "payment", "payment\", "{CE0E8EBD-5D2D-4DF2-B196-CB176DB8F156}"
+	ProjectSection(WebsiteProperties) = preProject
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.0"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_56199"
+		Debug.AspNetCompiler.PhysicalPath = "payment\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_56199\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/localhost_56199"
+		Release.AspNetCompiler.PhysicalPath = "payment\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_56199\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "56199"
+		SlnRelativePath = "payment\"
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EEE2FFE9-84C7-4DBF-8B04-C6B24856B6DD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EEE2FFE9-84C7-4DBF-8B04-C6B24856B6DD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CE0E8EBD-5D2D-4DF2-B196-CB176DB8F156}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CE0E8EBD-5D2D-4DF2-B196-CB176DB8F156}.Debug|Any CPU.Build.0 = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {3BEB097E-82B6-4D5E-8683-F0915489924E}
+	EndGlobalSection
+EndGlobal

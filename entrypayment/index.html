@@ -1,0 +1,56 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>i@nseo Japan大会参加費支払</title>
+
+    <!-- Load Stripe.js on your website. -->
+    <script src="https://js.stripe.com/v3"></script>
+    <script src="./appenv.js"></script>
+</head>
+<body>
+    <h1>第１回全国リモートアーチェリー大会　参加費支払</h1>
+    <hr />
+    <p>第１回全国リモートアーチェリー大会の参加費を支払うページです。クレジットカードで決済可能です。どうぞよろしくお願いいたします。</p>
+    <p>なお、カード情報は保持されませんので、支払の都度入力をお願いします。</p>
+
+    <p>参加人数を入力してください。</p>
+    <input id="quantity-input" type="number" value="1" min="1" max="100" step="1">人
+
+    <p>支払ボタンをクリックするとカード情報入力画面に移動します。</p>
+
+    <button style="background-color:#6772E5;color:#FFF;padding:8px 12px;border:0;border-radius:4px;font-size:1em"
+            id="checkout-button"
+            role="link">
+        支払い
+    </button>
+
+    <div id="error-message"></div>
+
+    <script>
+        (function () {
+            var stripe = Stripe(STRIPE_API_KEY);
+
+            var checkoutButton = document.getElementById('checkout-button');
+            checkoutButton.addEventListener('click', function () {
+                var inptxt = document.getElementById('quantity-input');
+                var quant = Number(inptxt.value);
+
+                stripe.redirectToCheckout({
+                    lineItems: [{ price: STRIPE_PRICE_KEY, quantity: quant }],
+                    mode: 'payment',
+                    successUrl: SITE_BASE_URL + 'success.html',
+                    cancelUrl: SITE_BASE_URL + 'canceled.html',
+                })
+                    .then(function (result) {
+                        if (result.error) {
+                            var displayError = document.getElementById('error-message');
+                            displayError.textContent = result.error.message;
+                        }
+                    });
+            });
+        })();
+    </script>
+
+</body>
+</html>

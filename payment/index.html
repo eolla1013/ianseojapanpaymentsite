@@ -1,0 +1,48 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>i@nseo Japanクラウドサーバ利用料支払</title>
+
+    <!-- Load Stripe.js on your website. -->
+    <script src="https://js.stripe.com/v3"></script>
+    <script src="./appenv.js"></script>
+</head>
+<body>
+    <h1>i@nseo Japanクラウドサーバ利用料支払</h1>
+    <hr />
+    <p>i@nseo Japanのクラウドサーバを利用するための支払いを行うページです。クレジットカードで決済可能です。どうぞよろしくお願いいたします。</p>
+    <p>なお、カード情報は保持されませんので、支払の都度入力をお願いします。</p>
+
+    <button style="background-color:#6772E5;color:#FFF;padding:8px 12px;border:0;border-radius:4px;font-size:1em"
+            id="checkout-button"
+            role="link">
+        2,000円を支払います
+    </button>
+
+    <div id="error-message"></div>
+
+    <script>
+        (function () {
+        var stripe = Stripe(STRIPE_API_KEY);
+
+        var checkoutButton = document.getElementById('checkout-button');
+        checkoutButton.addEventListener('click', function () {
+        stripe.redirectToCheckout({
+            lineItems: [{price: STRIPE_PRICE_KEY, quantity: 1}],
+            mode: 'payment',
+            successUrl: SITE_BASE_URL + 'success.html',
+            cancelUrl: SITE_BASE_URL + 'canceled.html',
+        })
+        .then(function (result) {
+            if (result.error) {
+            var displayError = document.getElementById('error-message');
+            displayError.textContent = result.error.message;
+            }
+        });
+        });
+        })();
+    </script>
+
+</body>
+</html>
